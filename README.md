@@ -1,4 +1,4 @@
-# Guardian plugin for CakePHP
+# Guardian plugin for CakePHP ACL
 
 ## Installation
 
@@ -7,5 +7,18 @@ You can install this plugin into your CakePHP application using [composer](http:
 The recommended way to install composer packages is:
 
 ```
-composer require your-name-here/Guardian
+composer require boleiros/Guardian
+```
+
+## Enable Plugin
+
+```php
+// config/bootstrap.php
+
+Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+```
+Or, in your terminal:
+
+```
+bin/cake plugin load -b -r Gardian
 ```
