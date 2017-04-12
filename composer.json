@@ -1,7 +1,18 @@
 {
-    "name": "your-name-here/Guardian",
-    "description": "Guardian plugin for CakePHP",
+    "name": "boleiros/Guardian",
+    "description": "ACL plugin for CakePHP 3.x",
     "type": "cakephp-plugin",
+    "keywords": ["cakephp", "templates", "plugin"],
+    "homepage": "https://cakephpbrasil.com.br",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Flaviano Honorato",
+          "email": "flaviano.honorato@gmail.com",
+          "homepage": "https://www.flaviano.com.br/",
+          "role": "Author"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.3.2 <4.0.0"
