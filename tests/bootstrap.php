@@ -1,4 +1,6 @@
 <?php
+
+use Cake\Datasource\ConnectionManager;
 /**
  * Test suite bootstrap for Guardian.
  *
@@ -22,3 +24,19 @@ unset($findRoot);
 
 chdir($root);
 require $root . '/config/bootstrap.php';
+
+// Ensure default test connection is defined
+if (!getenv('db_class')) {
+    putenv('db_class=Cake\Database\Driver\Mysql');
+    // putenv('db_dsn=sqlite::memory:');
+}
+
+ConnectionManager::config('test', [
+    'className' => 'Cake\Database\Connection',
+    'driver' => getenv('db_class'),
+    'dsn' => getenv('db_dsn'),
+    'database' => 'guardian_dev',
+    'username' => 'root',
+    'password' => 'desenv',
+    'timezone' => 'UTC'
+]);

@@ -26,12 +26,7 @@ class CreateUsers extends AbstractMigration
             'limit'     => 255,
             'null'      => false,
         ]);
-
-        $table->addColumn('group_id', 'integer', [
-            'default'   => null,
-            'limit'     => 11,
-            'null'      => false,
-        ]);
+       
         $table->addColumn('created', 'timestamp', [
             'default'   => null,
             'limit'     => null,

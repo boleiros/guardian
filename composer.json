@@ -11,14 +11,21 @@
           "email": "flaviano.honorato@gmail.com",
           "homepage": "https://www.flaviano.com.br/",
           "role": "Author"
+        },
+        {
+          "name": "Elton Nicolau",
+          "email": "eltonantunes@hotmail.com",
+          "homepage": "https://github.com/elton182/",
+          "role": "Author"
         }
     ],
     "require": {
         "php": ">=5.5.9",
-        "cakephp/cakephp": ">=3.3.2 <4.0.0"
+        "cakephp/cakephp": ">=3.3.2 <4.0.0"        
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "*",        
+        "cakephp/migrations": "^1.6"
     },
     "autoload": {
         "psr-4": {
@@ -28,7 +35,7 @@
     "autoload-dev": {
         "psr-4": {
             "Guardian\\Test\\": "tests",
-            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+            "Cake\\Test\\": "vendor/cakephp/cakephp/tests"
         }
     }
 }
