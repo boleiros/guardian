@@ -11,7 +11,6 @@ Trait Guardian
     {
         $user = $this;
 
-
         $userGroupsTable = TableRegistry::get('user_groups');
         $groupTable = TableRegistry::get('Groups');
         $permissionTable = TableRegistry::get('permissions');
@@ -36,14 +35,14 @@ Trait Guardian
             $groupPermissions = $groupPermissionTable->find('all')
                 ->where(['group_id = ' => $group->id]);
 
+
             foreach ($groupPermissions as $groupPermission) {
-            
 
                 $permission = $permissionTable->find('all')
                     ->where(['id = ' => $groupPermission->permission_id])
                     ->first();
 
-                if (!is_null($permission)) {                    
+                if (!is_null($permission)) {
                     return true;
                 }
             }
