@@ -20,26 +20,30 @@ Trait Guardian
         $userGroups = $userGroupsTable->find('all')
             ->where(['user_id =' => $user->id]);
 
-        // $groups = $user->group;
+        $existPermission = $permissionTable->find('all')
+            ->where(['name = ' => $permissionName])
+            ->first();
 
-        // var_dump($user->groups);exit();
+        if (is_null($existPermission)) {
+            return true;
+        }
 
         foreach ($userGroups as $userGroup) {
 
-            
+
             $group = $groupTable->get($userGroup->group_id);
-            
+
             $groupPermissions = $groupPermissionTable->find('all')
                 ->where(['group_id = ' => $group->id]);
 
             foreach ($groupPermissions as $groupPermission) {
+            
 
                 $permission = $permissionTable->find('all')
-                    ->where(['name = ' => $permissionName])
+                    ->where(['id = ' => $groupPermission->permission_id])
                     ->first();
 
-                            
-                if (!is_null($permission)) {
+                if (!is_null($permission)) {                    
                     return true;
                 }
             }
