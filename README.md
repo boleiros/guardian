@@ -29,3 +29,23 @@ bin/cake plugin load -b -r Gardian
 bin/cake migrations migrate --plugin Guardian
 ```
 
+## Usage
+
+1. import and use the Guardian Trait on your user Model
+```
+//User.php
+<?php
+namespace App\Model\Entity;
+
+use Cake\ORM\Entity;
+use Guardian\Model\Traits\Guardian;
+
+class User extends Entity
+{
+
+    use Guardian;
+    ....
+
+```
+2. call the method passing the name of the permission:
+``` $user->hasPermission('users.index') ```
